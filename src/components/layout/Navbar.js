@@ -1,0 +1,32 @@
+import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom'
+
+const Navbar = ({icon,title})=> {
+
+        return(
+            <nav className="navbar bg-primary">
+               <h1 style={{color:'#333'}}>
+                   <i className={icon} />
+                   &nbsp;{title}
+               </h1>
+               <ul>
+                   <li><Link to='/'>Home</Link></li>
+                </ul>
+            </nav>
+        )
+    }
+
+
+Navbar.defaultProps={
+    title:"Gitty Search",
+    icon: "fab fa-github"
+}
+
+Navbar.propTypes = {
+    title : PropTypes.string.isRequired,
+    icon: PropTypes.string
+}
+
+
+
+export default Navbar;
